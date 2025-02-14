@@ -1,0 +1,28 @@
+body {
+    background-color: var(--bg);
+}
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Faz com que ocupe a altura total da tela */
+  }
+.botao {
+    font-size:xx-large;
+    background-color: var(--font);
+    color: var(--bg);
+}
+.dark {
+    --bg: var(--black);
+    --font: var(--white);
+}
+.light {
+    --bg: var(--white);
+    --font: var(--black);
+
+}
+:root {
+    --white: #ffffff;
+    --gray: #e3e1e1;
+    --black: #000000;
+}
