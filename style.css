@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif; /*Aqui eu adicionei uma fonte padrão para todo o corpo do HTML*/
+}
+
+h1 {
+    font-family: 'franklin gothic medium'; /*Aqui adicionei uma fonte apenas par h2*/
+    text-align: center; /*Aqui centraliza o h2 na pagina*/
+}
+p {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+ul {
+    list-style:none; /*Isso remove o simbolozinho da lista*/
+    padding: 0; /*Remove o preenchimento, sem isso a lista não fica centralizada mesmo com o text-align*/
+    text-align: center;
+    background-color: blue;
+}
+li {
+    margin: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.btn {
+    display: block;
+    margin: auto;
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    font-family: cursive;
+}
