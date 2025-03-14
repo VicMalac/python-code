@@ -1,12 +1,7 @@
-numero = 10
- 
-if numero > 1:
-    if numero > 2:
-        if numero > 3:
-            print('Número maior que 3')
-        else:
-            print('Número menor que 3')
-    else:
-        print('Número menor que 2')
-else:
-    print('Número menor que 1')
+teste = 10
+dois = 2
+print("O primeiro número é %d e o segundo é %d" % (teste, dois))
+
+teste = float(teste)
+
+print(teste)
