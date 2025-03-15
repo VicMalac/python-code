@@ -23,8 +23,8 @@ if nome and idade:
         print("O seu nome contém espaços")
     else:
         print("O seu nome não contém espaços")
-    print(f"O seu nome tem {len(nome)} letras")
-    print(f"A primeira letra do seu nome é {nome[0]}")
-    print(f"A última letra do seu nome é {nome[-1]}")
+    print(f"O seu nome tem {len(nome)!r} letras")
+    print(f"A primeira letra do seu nome é {nome[0]!r}")
+    print(f"A última letra do seu nome é {nome[-1]!r}")
 else:
     print("Desculpe, você deixou campos vazios")
