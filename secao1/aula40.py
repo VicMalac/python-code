@@ -13,7 +13,7 @@ while True:
     if opr == '*': # Multiplicação
             print(f'{num1} * {num2} = {float(num1) * float(num2)}')
     if opr == '/': # Divisão
-            print(f'{num1} / {num2} = {float(num1) / float(num2)}')
+            print(f'{num1} / {num2} = {float(num1) / float(num2)}') ## Analisar
     if opr == '**': # Potenciação
             print(f'{num1} ** {num2} = {float(num1) ** float(num2)}')
     if opr == '//': # Divisão inteira
