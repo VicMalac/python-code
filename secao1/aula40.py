@@ -8,20 +8,19 @@ while True:
 
     if opr == '+': # Adição
             print(f'{num1} + {num2} = {float(num1) + float(num2)}')
-    if opr == '-': # Subtração
+    elif opr == '-': # Subtração
             print(f'{num1} - {num2} = {float(num1) - float(num2)}')
-    if opr == '*': # Multiplicação
+    elif opr == '*': # Multiplicação
             print(f'{num1} * {num2} = {float(num1) * float(num2)}')
-    if opr == '/': # Divisão
+    elif opr == '/': # Divisão
             print(f'{num1} / {num2} = {float(num1) / float(num2)}') ## Analisar
-    if opr == '**': # Potenciação
+    elif opr == '**': # Potenciação
             print(f'{num1} ** {num2} = {float(num1) ** float(num2)}')
-    if opr == '//': # Divisão inteira
+    elif opr == '//': # Divisão inteira
             print(f'{num1} // {num2} = {float(num1) // float(num2)}')
-    if opr == '%': # Modulo
+    elif opr == '%': # Modulo
         print(f'{num1} % {num2} = {float(num1) % float(num2):.1f}')
-
-
+        
 
     sair = input("Deseja sair? [s]im ou [n]ão: ").lower().startswith('s')
     if sair:
