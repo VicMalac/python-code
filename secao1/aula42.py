@@ -1,6 +1,5 @@
 frase = (
-    'O Python é uma linguagem de programação multiparadigma. '    
-    'Python foi criado por Guido van Rossum.'
+    'aabbb'
     )
 
 i = 0
@@ -14,12 +13,15 @@ while i < len(frase):
         i += 1
         continue
     
-    qtd_apareceu_mais_vezes_atual = frase.count(letra_atual)
+    qtd_atual = frase.count(letra_atual)
 
-    if qtd_apareceu_mais_vezes < qtd_apareceu_mais_vezes_atual:
-        qtd_apareceu_mais_vezes_atual = qtd_apareceu_mais_vezes_atual
+    if qtd_apareceu_mais_vezes < qtd_atual:
+        qtd_apareceu_mais_vezes = qtd_atual
         letra_apareceu_mais_vezes = letra_atual
     i += 1
 
 
 print(f'A letra que mais apareceu foi {letra_apareceu_mais_vezes!r}')
+
+# O que meu código faz?
+# ele conta quantas vezes uma letra aparece na frase
