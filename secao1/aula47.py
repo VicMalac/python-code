@@ -7,14 +7,21 @@ Faça um jogo para o usuário adivinhar qual a plavra secreta
 Faça a contagem de tentativas do seu usuário.
 
 """               #01234567
-palavra_secreta = 'azeiTONA'.lower() # Len == 8
+while True:
+    palavra_secreta = input('Escreva a sua palavra secreta: ').lower() # Len == 8
+    if palavra_secreta.isdigit():
+        print('Escreva apenas letras!!!')
+        continue
+    else:
+        break
                  #-87654321
-letras_adicionadas = ''
+letras_adicionadas = '*' * len(palavra_secreta)
 tentativas = 0
 letra_correta = ''
 phrase_ao_contrario = len(palavra_secreta)
 
 while letras_adicionadas != palavra_secreta:
+    tentativas += 1
     phrase_ao_contrario = 0
     chute_usuario = input("Digite uma letra: ")
     if chute_usuario.isdigit():
@@ -28,9 +35,15 @@ while letras_adicionadas != palavra_secreta:
 
     if chute_usuario in palavra_secreta: #  Se o chute do usuario estiver na palavra ele revela a/as letras
         for i in range(len(palavra_secreta)):
-            phrase_ao_contrario -= 1
-            if chute_usuario == palavra_secreta[i]: # Se o chute existir na palavra, adiciona ela no lugar correto
-                print(phrase_ao_contrario)
-                letras_adicionadas = '*' * (((len(palavra_secreta)) - phrase_ao_contrario))+ chute_usuario+ 's' * ((len(palavra_secreta) - i + 1))
+            phrase_ao_contrario = len(palavra_secreta) - len(palavra_secreta) - len(palavra_secreta)
+            if chute_usuario == palavra_secreta[i]: # Se o chute existir na palavra, adiciona ela no lugar correto  
+                letras_adicionadas = letras_adicionadas[:i] + chute_usuario + letras_adicionadas[i+1:] 
                 continue
+    else:
+        print('Essa letra não existe na palavra!')
+        continue
     print(letras_adicionadas)
+
+else:
+    print('         PARABÉNS\nVocê acertou a palavra secreta')
+    print(f'Número de tentativas: {tentativas}')
