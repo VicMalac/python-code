@@ -6,14 +6,13 @@ menor = 0
 
 while True:
     for i in range(0, 10):
-        mamei = input("Digite um número: ")
-        if not mamei.isdigit():
-            print('Digite apenas números!')
-            continue
+        mamei = int(input("Digite um número: "))
     
     for i in range(0, 10):
+        number = f'{number}' + f'{mamei}'
         number = int(number)
-        if number >= 0:
-            maior = number[i]
-
-    print('Maior: ', maior)
+        if number > maior:
+            maior = number
+        
+    break
+print('Maior: ', maior)
