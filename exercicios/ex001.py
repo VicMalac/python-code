@@ -14,7 +14,10 @@ for i in range(0, 3):
     if num[i] < menor: # Se o valor do indice for menor do que o 'menor' que é == 4...
         menor = num[i] # menor = (O valor do indice)
 
-print(maior, meio, menor)
+for i in range(0, 3):
+    if num[i] != maior and num[i] != menor:
+        meio = num[i]
+print(f"Maior: {maior}\nMeio: {meio}\nMenor: {menor}")
 
 
 

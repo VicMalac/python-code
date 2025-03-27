@@ -11,3 +11,13 @@ XXXXX
 XXXXX
 XXXXX
 """
+from os import system
+
+linha = int(input("Linhas: "))
+coluna = int(input("Colunas: "))
+char = input("Caractere: ")
+system("cls")
+for i in range(linha):
+    for i in range(coluna):
+        print(char, end = "")
+    print("")
