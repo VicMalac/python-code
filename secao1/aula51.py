@@ -4,16 +4,13 @@ For in com lista
 Exercício
 Exiba os índices da lista
 0 - Maria
-1 - Ana Luiza
+1 - Ana
 2 - Victor
 """
-# fora_da_lista = 2
-# lista = ["Maria", 'Helena', 'Victor', 'Luiz', 14, fora_da_lista]
-# for nome in lista:
-#     print(nome, type(nome))
-lista = 'Maria', 'Victor', 'Ana Luiza'
+
+lista = 'Maria', 'Victor', 'Ana', 'André', 'Teste'
 num = 0
-for nome in lista: # Nome é uma ste, então não dá para usar como contador
+for nome in lista: # Nome é uma str, então não dá para usar como contador
     print(num, '-', nome)
     num += 1
 

@@ -1,18 +1,39 @@
-# Criar um programa que leia 10 números inteiros e imprima o maior e o menor número.
+# Escreva um algoritmo que leia três valores inteiros e diferentes e mostre-os em ordem decrescente.
 
-number = ''
-maior = 0
-menor = 0
+num = []
+for i in range(0, 3):
+    nuum = int(input("Digite um número: "))
+    num.append(nuum)
+    maior = num[0] 
+    meio = num[0] 
+    menor = num[0]
 
-while True:
-    for i in range(0, 10):
-        mamei = int(input("Digite um número: "))
-    
-    for i in range(0, 10):
-        number = f'{number}' + f'{mamei}'
-        number = int(number)
-        if number > maior:
-            maior = number
-        
-    break
-print('Maior: ', maior)
+for i in range(0, 3): 
+    if num[i] > maior: # Se o valor do indice for maior do que o 'maior' que é == 4...
+        maior = num[i] # maior = (O valor do indice)
+    if num[i] < menor: # Se o valor do indice for menor do que o 'menor' que é == 4...
+        menor = num[i] # menor = (O valor do indice)
+
+print(maior, meio, menor)
+
+
+
+
+# num = [1, 2, 3]  # Lista com os números
+# maior = num[0]
+# menor = num[0]
+# meio = num[0]
+
+# # Encontrar maior e menor
+# for i in range(1, 3):
+#     if num[i] > maior:
+#         maior = num[i]
+#     if num[i] < menor:
+#         menor = num[i]
+
+# # O número do meio é aquele que não é nem o maior nem o menor
+# for i in range(3):
+#     if num[i] != maior and num[i] != menor:
+#         meio = num[i]
+
+# print(f"Maior: {maior}, Meio: {meio}, Menor: {menor}")
