@@ -8,7 +8,7 @@ Exiba os índices da lista
 2 - Victor
 """
 
-lista = 'Maria', 'Victor', 'Ana', 'André', 'Teste'
+lista = ['Maria', 'Victor', 'Ana', 'André', 'Teste']
 num = 0
 for nome in lista: # Nome é uma str, então não dá para usar como contador
     print(num, '-', nome)
