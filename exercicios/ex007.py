@@ -6,8 +6,8 @@ Objetivo: Implementar um programa que permite ao usuário adicionar, remover, bu
 from os import system
 ##########################################################################################################################
 
-nomes = []
-telefones = []
+nomes = ['victor', 'teste', 'victor']
+telefones = ['1123', '123441', '1231241']
 indices_repetidos = []
 largura = 60  # Define a largura total da exibição
 inicio = True
@@ -49,7 +49,7 @@ while True:
                         print("-" * largura)
                         nome = input("             Digite o nome do contato: ").lower()
                         telAtual = input("          Digite o número de telefone do contato: ")
-                        if nome or telAtual:
+                        if nome and telAtual:
                             nomes.append(nome)
                             telefones.append(telAtual)
                             add = False
@@ -82,9 +82,9 @@ while True:
                         for i in range(len(nomes)):
                             if nomes[i] == contatoRemove:
                                 indices_repetidos.append(i)
-                        for indice, i in enumerate(indices_repetidos):
+                        for indice, i in enumerate(indices_repetidos, start= 1): # Começa a partir do indice 1
                             if contatoRemove == telefones[i] or contatoRemove == nomes[i]:
-                                print(f"{indice + 1}. {nomes[i].title()} - {telefones[i]}".center(largura))
+                                print(f"{indice}. {nomes[i].title()} - {telefones[i]}".center(largura))
 
                         print("-" * largura)
                         while True:
