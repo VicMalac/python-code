@@ -11,3 +11,5 @@ outros = input("Tem outros gastos esse mês? (Sim/Não) ")
 
 if carro == "Sim":
     carro = int(input("Quanto irá gastar: "))
+
+# (ESSE EXERCÍCIO SERÁ MELHOR EXECUTADO QUANDO TIVER UMA TELA [INTERFACE], POIS SERÁ MUITO COMPLEXO DE FORMA ATOA USANDO CASE)
