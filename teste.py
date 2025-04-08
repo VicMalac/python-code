@@ -1,4 +1,3 @@
-
 from os import system
 items = ['milk', 'beans', 'coffe']
 OPTIONS = ['[1] Add a Product',
