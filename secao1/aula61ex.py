@@ -32,4 +32,6 @@ for i in cpf:
     soma += i * mult
     mult -= 1
 soma = (soma * 10) % 11
+if soma > 9:
+    soma = 0
 print(soma)
