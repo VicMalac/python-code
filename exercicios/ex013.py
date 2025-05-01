@@ -1,0 +1,50 @@
+"""
+🧠 Desafio: Simulador de Caixa Eletrônico com Controle de Notas
+🎯 Objetivo
+Criar um programa que simule um caixa eletrônico. Ele deve receber um valor a ser sacado e retornar quantas notas de cada valor serão entregues, com base nas notas disponíveis.
+
+💵 Notas disponíveis
+R$100
+
+R$50
+
+R$20
+
+R$10
+
+R$5
+
+R$2
+
+📝 Regras
+O caixa tem um número limitado de notas.
+Exemplo inicial:
+
+notas = {
+    100: 5,
+    50: 5,
+    20: 5,
+    10: 5,
+    5: 5,
+    2: 5
+}
+
+O usuário digita um valor a sacar. O programa:
+
+Verifica se o valor é possível com as notas disponíveis.
+
+Exibe quantas notas de cada valor foram entregues.
+
+Atualiza o "estoque" de notas do caixa.
+
+Se não for possível sacar o valor (por falta de notas ou valor inválido), deve avisar o usuário com uma mensagem clara.
+
+O programa continua até o usuário digitar "0" para sair.
+
+🧠 Extras opcionais (se quiser deixar mais difícil):
+Mostrar o total de dinheiro restante no caixa.
+
+Permitir o “reabastecimento” manual das notas.
+
+Implementar senha para acessar a área de manutenção.###
+"""
