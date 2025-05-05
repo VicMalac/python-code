@@ -36,26 +36,40 @@
 # Adicionar um jackpot: Se o jogador apostar no número exato e acerto em 3 rodadas consecutivas, ganha o jackpot (ex: 5x o valor apostado).
 
 import random
+from os import system
+from time import sleep
+
 saldo = 100
 rodadas = 5
 try: 
     while saldo > 0:
         rodadas -= 1
-        if rodadas == 0:
-            print("Ultima rodada!")
 
         aleatorio = random.randint(1, 6)
-        print(aleatorio)
-        valorAposta = int(input("Quanto deseja apostar: "))
+        while True:
+            system("cls")
+            if rodadas == 0:
+                print("Ultima rodada!")
+            valorAposta = int(input("Quanto deseja apostar: "))
+            if valorAposta > saldo:
+                print("Saldo Insuficiente!")
+            else:
+                break
         aposta = int(input("Digite sua aposta [1 a 6]: "))
         
-        if aposta == aleatorio:
-            saldo += valorAposta
+        if aposta == aleatorio: print("Você acertou!") ; saldo += valorAposta ; print(f"Novo saldo {saldo}") # Usar if somente assim agora()
         else:
+            print("Você errou!")
             saldo -= valorAposta
-        print(saldo)
-        
-        if rodadas == 0:
+            print(f"Novo Saldo: {saldo}")
+        if rodadas == 0 or saldo == 0:
+            print("Fim das apostas!")
             break
+        sleep(1)
+        print(".", end="")
+        sleep(1)
+        print(".", end="")
+        sleep(1)
+        print(".", end="")
 except:
     print("Erro!")
