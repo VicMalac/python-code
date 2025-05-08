@@ -65,16 +65,14 @@ valorSacar = int(input("Digite quanto deseja sacar: "))
 saquePossivel = 0
 # valor de valorSacar = 120 supondo
 for valor, quantidade in notas.items():
-    if valorSacar > valor and quantidade > 0:
+    if valorSacar >= valor and quantidade > 0:
         daParaTrocar = True
         for i in range(quantidade):
-            print(f"Valor {valor}");print(valorSacar)
-            saquePossivel += valorSacar - valor; valorSacar -= (valor )
-            quantidade -= 1
-            print(f"Valor sacar: {valorSacar}")
-    else:
-        daParaTrocar = False
-    
-    if daParaTrocar == True:
-        print(f"Troquei por {valor}")
+            if valorSacar % 2 != 0:
+                
+            if valorSacar >= valor:
+                saquePossivel += valor; valorSacar -= (valor )
+                quantidade -= 1
+            else:
+                continue
 print(f"Valor sacado: {saquePossivel}")
