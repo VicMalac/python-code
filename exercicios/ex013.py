@@ -68,11 +68,16 @@ for valor, quantidade in notas.items():
     if valorSacar >= valor and quantidade > 0:
         daParaTrocar = True
         for i in range(quantidade):
-            if valorSacar % 2 != 0:
-                
+            if valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0: # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2
+                valorSacar -= 2
+                saquePossivel += 2
+                notas[2] -= 1
+                continue
+
             if valorSacar >= valor:
                 saquePossivel += valor; valorSacar -= (valor )
-                quantidade -= 1
+                quantidade -= 1; notas[valor] -= 1
             else:
                 continue
+print(notas)
 print(f"Valor sacado: {saquePossivel}")
