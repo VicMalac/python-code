@@ -48,3 +48,33 @@ Permitir o “reabastecimento” manual das notas.
 
 Implementar senha para acessar a área de manutenção.###
 """
+
+# Quantidade de cedulas
+
+notas = { # Uso de dicionários, o primeiro valor representado o nome de uma variável e o restante, o seu valor
+    100: 5,
+    50: 5,
+    20: 5,
+    10: 5,
+    5: 5,
+    2: 5
+}
+# Criar um programa que simule um caixa eletrônico. Ele deve receber um valor a ser sacado e retornar quantas notas de cada valor serão entregues, com base nas notas disponíveis.
+
+valorSacar = int(input("Digite quanto deseja sacar: "))
+saquePossivel = 0
+# valor de valorSacar = 120 supondo
+for valor, quantidade in notas.items():
+    if valorSacar > valor and quantidade > 0:
+        daParaTrocar = True
+        for i in range(quantidade):
+            print(f"Valor {valor}");print(valorSacar)
+            saquePossivel += valorSacar - valor; valorSacar -= (valor )
+            quantidade -= 1
+            print(f"Valor sacar: {valorSacar}")
+    else:
+        daParaTrocar = False
+    
+    if daParaTrocar == True:
+        print(f"Troquei por {valor}")
+print(f"Valor sacado: {saquePossivel}")

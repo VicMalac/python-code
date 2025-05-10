@@ -47,7 +47,6 @@ try:
 
         aleatorio = random.randint(1, 6)
         while True:
-            system("cls")
             if rodadas == 0:
                 print("Ultima rodada!")
             valorAposta = int(input("Quanto deseja apostar: "))
@@ -71,5 +70,6 @@ try:
         print(".", end="")
         sleep(1)
         print(".", end="")
+        system("cls")
 except:
     print("Erro!")
