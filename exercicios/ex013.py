@@ -50,6 +50,11 @@ Implementar senha para acessar a área de manutenção.###
 """
 
 # Quantidade de cedulas
+def verificarQTD(valor, quantidade):
+    for i, j in notasUsadas.items():
+        if j == 0:
+            continue
+    print(f"Notas de {i} usadas - {j}")
 
 notas = { # Uso de dicionários, o primeiro valor representado o nome de uma variável e o restante, o seu valor
     100: 5,
@@ -63,21 +68,39 @@ notas = { # Uso de dicionários, o primeiro valor representado o nome de uma var
 
 valorSacar = int(input("Digite quanto deseja sacar: "))
 saquePossivel = 0
+notasUsadas = {
+    100 : 0,
+    50 : 0,
+    20 : 0,
+    10 : 0,
+    5 : 0,
+    2 : 0
+}
 # valor de valorSacar = 120 supondo
+for i, j in notas.items(): #Verificação da quantia total do valor de notas
+    ...
 for valor, quantidade in notas.items():
     if valorSacar >= valor and quantidade > 0:
         daParaTrocar = True
         for i in range(quantidade):
+            if valorSacar > ...:
+                ...
             if valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0: # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2
                 valorSacar -= 2
                 saquePossivel += 2
-                notas[2] -= 1
+                notas[2] -= 1 ;notasUsadas[2] += 1
                 continue
 
             if valorSacar >= valor:
                 saquePossivel += valor; valorSacar -= (valor )
                 quantidade -= 1; notas[valor] -= 1
+                notasUsadas[valor] += 1
             else:
                 continue
 print(notas)
 print(f"Valor sacado: {saquePossivel}")
+print("Notas usadas: ")
+for i, j in notasUsadas.items():
+    if j == 0:
+        continue
+    print(f"Você recebeu {j} notas {i}")
