@@ -66,8 +66,7 @@ notas = { # Uso de dicionários, o primeiro valor representado o nome de uma var
 }
 # Criar um programa que simule um caixa eletrônico. Ele deve receber um valor a ser sacado e retornar quantas notas de cada valor serão entregues, com base nas notas disponíveis.
 
-valorSacar = int(input("Digite quanto deseja sacar: "))
-saquePossivel = 0
+saquePossivel = 0; soma = 0
 notasUsadas = {
     100 : 0,
     50 : 0,
@@ -78,29 +77,36 @@ notasUsadas = {
 }
 # valor de valorSacar = 120 supondo
 for i, j in notas.items(): #Verificação da quantia total do valor de notas
-    ...
-for valor, quantidade in notas.items():
-    if valorSacar >= valor and quantidade > 0:
-        daParaTrocar = True
-        for i in range(quantidade):
-            if valorSacar > ...:
-                ...
-            if valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0: # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2
-                valorSacar -= 2
-                saquePossivel += 2
-                notas[2] -= 1 ;notasUsadas[2] += 1
-                continue
+    soma += (i * j)
 
-            if valorSacar >= valor:
-                saquePossivel += valor; valorSacar -= (valor )
-                quantidade -= 1; notas[valor] -= 1
-                notasUsadas[valor] += 1
-            else:
-                continue
-print(notas)
-print(f"Valor sacado: {saquePossivel}")
-print("Notas usadas: ")
-for i, j in notasUsadas.items():
-    if j == 0:
-        continue
-    print(f"Você recebeu {j} notas {i}")
+while True:
+    for i, j in notasUsadas.items():
+        notasUsadas[i] = 0
+    valorSacar = int(input("Digite quanto deseja sacar: "))
+    if valorSacar == 0:
+        break
+    for valor, quantidade in notas.items():
+        if valorSacar >= valor and quantidade > 0:
+            daParaTrocar = True
+            for i in range(quantidade):
+                if valorSacar > soma:
+                    ("Não existem notas o suficiente para sacar esse valor!")
+                    continue
+                if valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0: # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2
+                    valorSacar -= 2
+                    saquePossivel += 2
+                    notas[2] -= 1 ;notasUsadas[2] += 1
+                    continue
+
+                if valorSacar >= valor:
+                    saquePossivel += valor; valorSacar -= (valor )
+                    quantidade -= 1; notas[valor] -= 1
+                    notasUsadas[valor] += 1
+                else:
+                    continue
+    print(notas)
+    print(f"Valor total sacado: {saquePossivel}")
+    for i, j in notasUsadas.items():
+        if j == 0:
+            continue
+        print(f"Você recebeu {j} notas {i}")
