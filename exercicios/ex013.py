@@ -49,13 +49,6 @@ Permitir o “reabastecimento” manual das notas.
 Implementar senha para acessar a área de manutenção.###
 """
 
-# Quantidade de cedulas
-def verificarQTD(valor, quantidade):
-    for i, j in notasUsadas.items():
-        if j == 0:
-            continue
-    print(f"Notas de {i} usadas - {j}")
-
 notas = { # Uso de dicionários, o primeiro valor representado o nome de uma variável e o restante, o seu valor
     100: 5,
     50: 5,
