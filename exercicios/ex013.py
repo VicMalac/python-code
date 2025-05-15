@@ -83,13 +83,21 @@ while True:
             daParaTrocar = True
             for i in range(quantidade):
                 if valorSacar > soma:
-                    ("Não existem notas o suficiente para sacar esse valor!")
+                    print("Não existem notas o suficiente para sacar esse valor!")
                     continue
-                if valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0: # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2
+
+                if valorSacar >= 2 and notas[2] >= (valorSacar // 2) and valorSacar % 2 == 0:
+                    qtd_2 = valorSacar // 2
+                    valorSacar -= qtd_2 * 2
+                    notas[2] -= qtd_2
+                    notasUsadas[2] += qtd_2
+                    saquePossivel += qtd_2 * 2
+                elif (valorSacar % 2 != 0 and valorSacar % 5 != 0 and notas[2] > 0): # Caso seja 131 por exemplo, uma nota de 100 uma nota de 20 outra de 5 e três de 2 - 131 Funciona mas 156 não - 
                     valorSacar -= 2
                     saquePossivel += 2
                     notas[2] -= 1 ;notasUsadas[2] += 1
                     continue
+
 
                 if valorSacar >= valor:
                     saquePossivel += valor; valorSacar -= (valor )
@@ -97,9 +105,14 @@ while True:
                     notasUsadas[valor] += 1
                 else:
                     continue
-    print(notas)
-    print(f"Valor total sacado: {saquePossivel}")
-    for i, j in notasUsadas.items():
-        if j == 0:
-            continue
-        print(f"Você recebeu {j} notas {i}")
+    if valorSacar == 0:
+        print(f"\n✅ Saque de R${saquePossivel} realizado com sucesso!")
+        for nota, qtd in notasUsadas.items():
+            if qtd > 0:
+                print(f"Você recebeu {qtd} nota(s) de R${nota}")
+    else:
+        print("❌ Não foi possível sacar o valor desejado com as notas disponíveis.")
+        # Reverte alterações
+        for nota, qtd in notasUsadas.items():
+            notas[nota] += qtd
+        saquePossivel = 0
