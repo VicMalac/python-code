@@ -29,16 +29,10 @@ Mas se a fila normal estiver vazia, só chama da prioritária, e vice-versa.
 O nome e a idade do paciente devem ser armazenados.
 
 🧱 Exemplo de estrutura de dados
-python
-Copiar
-Editar
 fila_prioritaria = []
 fila_normal = []
 Cada elemento pode ser uma tupla:
 
-python
-Copiar
-Editar
 ("João", 65)
 ("Maria", 35)
 💡 Extras opcionais
@@ -48,3 +42,17 @@ Permitir remover paciente da fila (caso ele desista).
 
 Mostrar tempo médio de espera estimado (fixo, por exemplo, 5 min por paciente).
 """
+
+# ? Adicionar paciente (nome e idade)
+
+# ? Chamar próximo paciente
+
+# ? Listar fila de espera
+
+# ! Sair
+
+try:
+    while True:
+        opcao = input("[1] Adicionar Paciente \n[2] Chamar próximo paciente\n[3] Listar fila de espera\n[4] Sair \nEscolha uma Opção: ")
+except:
+    ...
