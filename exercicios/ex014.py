@@ -40,3 +40,11 @@ Bloquear placas duplicadas (não deixar registrar um carro já estacionado).
 
 Adicionar um "log" de carros que já saíram.
 """
+import datetime
+carro = {
+    'DRH-8575' : "12:30"
+}
+
+hora_str = "18:30"
+hora_obj = datetime.datetime.strptime(carro["DRH-8575"], "%H:%M")
+print(hora_obj.time())
