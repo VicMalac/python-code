@@ -84,7 +84,7 @@ while True:
             for i in range(quantidade):
                 if valorSacar > soma:
                     print("Não existem notas o suficiente para sacar esse valor!")
-                    continue
+                    break
 
                 if valorSacar >= 2 and notas[2] >= (valorSacar // 2) and valorSacar % 2 == 0:
                     qtd_2 = valorSacar // 2
