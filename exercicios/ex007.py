@@ -71,7 +71,7 @@ while True:
                         continue
 
                     print("-" * largura)
-                    contatoRemove = input("             Digite o contato deseja remover: ").lower()
+                    contatoRemove = input("             Digite o contato que deseja remover: ").lower()
                     print("-" * largura)
 
 
