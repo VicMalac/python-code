@@ -1,1 +1,1 @@
-Repositório baseado em meus estudos de Python de cursos da Fatec Bragança Paulista e no curso de Python da Udemy.
+Repositório baseado em meus estudos de Python em diversas diferentes áreas, desde cursos pela Fatec, até aprendizados pessoais a cerca dessa linguagem
