@@ -40,4 +40,3 @@ match choice:
 
             case _: # Invalid Option
                 ...
-                #
