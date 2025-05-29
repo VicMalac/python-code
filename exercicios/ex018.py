@@ -28,14 +28,14 @@
 # b = AcharNota()
 # Resultado(a, b)
 
-arquivo = open('arquivo.txt', 'w')
-arquivo.write("Python \n")
-arquivo.write("Criei um arquivo com o comando open write e close")
-arquivo.close()
+# arquivo = open('arquivo.txt', 'w')
+# arquivo.write("Python \n")
+# arquivo.write("Criei um arquivo com o comando open write e close")
+# arquivo.close()
 
-leitura = open("arquivo.txt", "r")
-print(leitura.read())
-leitura.close()
+# leitura = open("arquivo.txt", "r")
+# print(leitura.read())
+# leitura.close()
 
 """
 r	Abre o arquivo somente para leitura.
