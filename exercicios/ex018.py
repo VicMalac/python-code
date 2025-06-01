@@ -38,7 +38,6 @@
 # leitura.close()
 
 """
-
 r	Abre o arquivo somente para leitura.
 O arquivo deve já existir.
 r+	Abre o arquivo para leitura e escrita. O arquivo deve já existir.
@@ -49,5 +48,4 @@ w+	Abre o arquivo para escrita e leitura, apagando o conteúdo preexistente.
 a	Abre o arquivo para escrita no final do arquivo.
 Não apaga o conteúdo preexistente.
 a+	Abre o arquivo para escrita no final do arquivo e leitura.
-
 """
