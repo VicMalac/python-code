@@ -40,10 +40,51 @@ Bloquear placas duplicadas (não deixar registrar um carro já estacionado).
 
 Adicionar um "log" de carros que já saíram.
 """
-import datetime
+from datetime import datetime
+carro = {}
 carro = {
-    'DRH-8575' : "12:30"
+    'DRH-8575' : {'entrada' : '12:30', 'saida' : '13:31'},
+    'CUY-5052' : {'entrada' : '13:51', 'saida' : '17:29'}
 }
 
-hora_obj = datetime.datetime.strptime(carro["DRH-8575"], "%H:%M")
-print(hora_obj.time())
+placa = '0'; horaEntrada = '0'; horaSaida = '0'
+
+pc, pv = list(carro.items())[0]
+
+def calcularHora():
+    for placa, horarios in carro.items():
+        entrada = datetime.strptime(horarios['entrada'], "%H:%M")
+        saida = datetime.strptime(horarios['saida'], '%H:%M')
+        calculo = int((saida - entrada).total_seconds() // 3600)
+        # print(f'{placa} - Tempo Estacionado: {calculo}')
+
+
+def registro(): # Registrando a entrada
+    global placa, horaSaida, horaEntrada
+    placa = input("Placa do carro: ")
+    horaEntrada = input("Entrada: ")
+    horaSaida = input("Saída: ")
+    carro[placa] = {
+        'entrada': f'{horaEntrada}',
+        'saida' : f'{horaSaida}'
+    }
+
+
+def listar():
+    print('--- Carros Estacionados ---')
+    for placa, horarios in carro.items():
+        print(f"{placa} - Entrada: {horarios['entrada']} | Saída: {horarios['saida']}")
+
+
+def pagar():
+    ...
+
+
+calcularHora()
+
+# placa = input("Digite a placa do carro (ou 'sair' para encerrar): ")
+#     if placa.lower() == 'sair':
+#         break
+
+#     hora = input("Digite o horário de entrada do carro (formato HH:MM): ")
+#     carro[placa] = hora  # Adiciona ao dicionário
