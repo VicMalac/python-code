@@ -1,0 +1,2 @@
+Python 
+Criei um arquivo com o comando open write e close
