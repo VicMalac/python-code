@@ -24,7 +24,22 @@ Contrário disso:
 
 O segundo dígito do CPF é 0
 """
-cpf = input("Digite o seu cpf sem os dígitos finais: ").replace(".", "").replace("-", "")
+import re
+import sys
+
+# cpf = input("Digite o seu cpf: ").replace(".", "").replace("-", "").replace(' ', '')
+cpf = re.sub( 
+    r'[^0-9]', # Utiliza somente NÚMEROS
+    '',
+    input("Digite o seu cpf: ")
+    )
+entrada_sequencial = cpf == cpf[0] * len(cpf)
+if entrada_sequencial:
+    print("Você enviou dados sequenciais")
+    sys.exit()
+
+cpfBackup = cpf
+cpf = cpf[:9]
 soma = 0
 mult = 10
 for i in cpf:
@@ -47,4 +62,12 @@ for i in cpf:
 soma = (soma * 10) % 11
 if soma > 9:
     soma = 0
-print(f"O segundo dígito é: {soma}")    
+print(f"O segundo dígito é: {soma}")
+cpf = f'{cpf}{soma}'
+
+
+if cpf == cpfBackup:
+    print("CPF válido")
+
+else:
+    print("CPF Inválido")
