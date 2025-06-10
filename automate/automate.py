@@ -8,7 +8,7 @@ import time
 import tkinter as tk
 from tkinter import messagebox
 
-lote = 200 # Quantidade de produtos que serão excluídos
+lote = 50 # Quantidade de produtos que serão excluídos
 intervalo_entre_itens = 3 # Em segundos
 arquivo = open('arquivo.txt', 'r')
 total_removidos = int(arquivo.read()) # Número total de remoções, sendo adicionado em um .txt
