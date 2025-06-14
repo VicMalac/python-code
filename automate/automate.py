@@ -3,12 +3,14 @@ Programa criado para a empresa Via Dolce para automatizar a exclusão de fotos d
 Após rodar o código, você tem 5 segundos para posicionar o mouse em cima do ícone de excluir
 Então o programa simula o botão de clique e depois aperta o enter para confirmar a exclusão e prossegue o número de vezes que for colocado na variável 'lote'
 """
+import keyboard
+
 import pyautogui
 import time
 import tkinter as tk
 from tkinter import messagebox
 
-lote = 1000
+lote = 1428
  # Quantidade de produtos que serão excluídos
 intervalo_entre_itens = 3 # Em segundos
 arquivo = open('arquivo.txt', 'r')
@@ -39,10 +41,14 @@ while True:
     for i in range(lote):
         pyautogui.click()
         print(f'Total de fotos removidas: {total_removidos + 1}')
+        arquivo = open('arquivo.txt', 'w')
+        arquivo.write(f'{total_removidos}')
+        arquivo.close()
         time.sleep(1)
         pyautogui.press('enter')
         time.sleep(intervalo_entre_itens)
         total_removidos += 1
+
 
     if not perguntar_se_deseja_continuar(total_removidos):
         print("Finalizado pelo usuário.")
