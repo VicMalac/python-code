@@ -56,7 +56,7 @@ def calcularHora():
         entrada = datetime.strptime(horarios['entrada'], "%H:%M")
         saida = datetime.strptime(horarios['saida'], '%H:%M')
         calculo = int((saida - entrada).total_seconds() // 3600)
-        # print(f'{placa} - Tempo Estacionado: {calculo}')
+        return calculo
 
 
 def registro(): # Registrando a entrada
@@ -80,7 +80,8 @@ def pagar():
     ...
 
 
-calcularHora()
+feio = calcularHora()
+print(feio)
 
 # placa = input("Digite a placa do carro (ou 'sair' para encerrar): ")
 #     if placa.lower() == 'sair':
