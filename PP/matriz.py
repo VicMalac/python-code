@@ -1,7 +1,6 @@
-matriz = []; soma = 0
+matriz = []; soma = 0, linha = []
 
 for i in range(3):
-    linha = []
     for j in range(3):
         valor = int(input(f"Digite um número para a matriz {i} {j}: "))
         linha.append(valor)
