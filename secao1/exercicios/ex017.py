@@ -39,7 +39,7 @@ import random
 from os import system
 from time import sleep
 
-saldo = 100
+saldo = 100; acertosSeguidos = 0
 rodadas = 5
 try: 
     while saldo > 0:
@@ -54,22 +54,30 @@ try:
                 print("Saldo Insuficiente!")
             else:
                 break
+        print(aleatorio)
         aposta = int(input("Digite sua aposta [1 a 6]: "))
         
-        if aposta == aleatorio: print("Você acertou!") ; saldo += valorAposta ; print(f"Novo saldo {saldo}") # Usar if somente assim agora()
+        if aposta == aleatorio: 
+            acertosSeguidos += 1
+            print("Você acertou!")
+            if acertosSeguidos == 3:
+                saldo += valorAposta * 5
+                print(f"Novo saldo {saldo}")
+            else:
+                saldo += valorAposta
+                print(f"Novo saldo {saldo}")
+
         else:
             print("Você errou!")
             saldo -= valorAposta
             print(f"Novo Saldo: {saldo}")
+            acertosSeguidos = 0
         if rodadas == 0 or saldo == 0:
             print("Fim das apostas!")
             break
-        sleep(1)
-        print(".", end="")
-        sleep(1)
-        print(".", end="")
-        sleep(1)
-        print(".", end="")
-        system("cls")
+        for i in range(3):
+            sleep(1)
+            print(".", end="")
+        print()
 except:
     print("Erro!")
