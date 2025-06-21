@@ -41,10 +41,13 @@ Bloquear placas duplicadas (não deixar registrar um carro já estacionado).
 Adicionar um "log" de carros que já saíram.
 """
 from datetime import datetime
-carro = {}
+from time import sleep
+from os import system
+
+entrada = 0
 carro = {
-    'DRH-8575' : {'entrada' : '12:30', 'saida' : '13:31'},
-    'CUY-5052' : {'entrada' : '13:51', 'saida' : '17:29'}
+    'DRH-8575' : {'entrada' : '12:30', 'saida' : '13:31', 'pagar' : ''},
+    'CUY-5052' : {'entrada' : '13:51', 'saida' : '21:29', 'pagar' : ''},
 }
 
 placa = '0'; horaEntrada = '0'; horaSaida = '0'
@@ -56,32 +59,63 @@ def calcularHora():
         entrada = datetime.strptime(horarios['entrada'], "%H:%M")
         saida = datetime.strptime(horarios['saida'], '%H:%M')
         calculo = int((saida - entrada).total_seconds() // 3600)
-        return calculo
+        carro[placa]['pagar'] = f'{calculo}'
 
 
 def registro(): # Registrando a entrada
     global placa, horaSaida, horaEntrada
-    placa = input("Placa do carro: ")
+    placa = input("Placa do carro: ").upper()
+    if placa in carro:
+        print("Este carro já está estacionado!")
+        return 0
     horaEntrada = input("Entrada: ")
     horaSaida = input("Saída: ")
     carro[placa] = {
         'entrada': f'{horaEntrada}',
         'saida' : f'{horaSaida}'
     }
+    print(f"{placa} registrado com sucesso!")
 
 
 def listar():
     print('--- Carros Estacionados ---')
     for placa, horarios in carro.items():
-        print(f"{placa} - Entrada: {horarios['entrada']} | Saída: {horarios['saida']}")
+        print(f"{placa} - Entrada: {horarios['entrada']} | Saída: {horarios['saida']} | Valor a pagar: R${horarios['pagar']}")
 
 
 def pagar():
-    ...
+    for placa, horas in carro.items():
+        pagamento = int(carro[placa]['pagar'])
+        if pagamento == 1:
+            carro[placa]['pagar'] = "5,00"
+        elif pagamento == 2:
+            carro[placa]['pagar'] = "9,00"
+        elif pagamento <= 3 & pagamento > 2:
+            carro[placa]['pagar'] = "12,00"
+        else:
+            carro[placa]['pagar'] = f"{12 + (pagamento - 3) * 3},00"
 
 
-feio = calcularHora()
-print(feio)
+while entrada != "3":
+    entrada = input("[1] Registrar carro\n"\
+                    "[2] Listar carros\n"\
+                    "[3] Sair\n"\
+                    "Escolha uma opção: "
+                    )
+    system("cls")
+    match entrada:
+        case '1':
+            registro()
+        case '2':
+            calcularHora()
+            pagar()
+            listar()
+        case '3':
+            print("Obrigado por usar o nosso programa de estacionamento!")
+            break
+        case _:
+            print("Opção invalida!")
+
 
 # placa = input("Digite a placa do carro (ou 'sair' para encerrar): ")
 #     if placa.lower() == 'sair':
