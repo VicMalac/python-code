@@ -1,13 +1,10 @@
-matriz = []; soma = 0, linha = []
+matriz = []
 
-for i in range(3):
-    for j in range(3):
-        valor = int(input(f"Digite um número para a matriz {i} {j}: "))
-        linha.append(valor)
-    matriz.append(linha)
+linhas = int(input("Digite o número de linhas: "))
+colunas = int(input("Digite o número de colunas: "))
 
 
-for i in range(3):
-    soma = soma + matriz[i][i]
-
-print(soma)
+for i in range(linhas):
+    for j in range(colunas):
+        print("#", end="")
+    print()
